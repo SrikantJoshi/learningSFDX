@@ -5,12 +5,12 @@ public class AccountController{
         List<Account> accList = [SELECT Id, Name, BillingState, 
                                     Website, Phone, Industry, Type from Account LIMIT 10];
         //return list of accounts- new commit
+        //more changes
         return accList;
     }
     
     @AuraEnabled
     public static boolean updateAccountss(List<Account> editedAccountList){
-        System.debug('-----'+editedAccountList);
         try{
             update editedAccountList;
             return true;
