@@ -1,0 +1,97 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Salesforce Lightning Design System Trailhead Module</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS_2_1_4, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+</head>
+    <apex:form styleClass="slds">
+        <!-- Without custom component for SVG -->
+        <div class="slds-page-header" role="banner">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-standard-opportunity">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS_2_1_4, 'assets/icons/standard-sprite/svg/symbols.svg#case')}" />
+                            </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-heading--label">Case</p>
+                            <div class="slds-grid">
+                                <h1 class="slds-text-heading--medium slds-m-right--small slds-truncate slds-align-middle" title="Test Opportunity">Test Opportunity</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-card__body">
+    <div class="slds-card__body--inner">
+      <div class="slds-tile">
+        <h3 class="slds-truncate" title="Related Record Title 1"><a href="javascript:void(0);">Related Record Title 1</a></h3>
+        <div class="slds-tile__detail slds-text-body--small">
+          <dl class="slds-dl--horizontal">
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Type">Type:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="Visit">Visit</span>
+            </dd>
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Date">Date:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="slds-tile">
+        <h3 class="slds-truncate" title="Related Record Title 2"><a href="javascript:void(0);">Related Record Title 2</a></h3>
+        <div class="slds-tile__detail slds-text-body--small">
+          <dl class="slds-dl--horizontal">
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Type">Type:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="Visit">Visit</span>
+            </dd>
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Date">Date:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="slds-tile">
+        <h3 class="slds-truncate" title="Related Record Title 3"><a href="javascript:void(0);">Related Record Title 3</a></h3>
+        <div class="slds-tile__detail slds-text-body--small">
+          <dl class="slds-dl--horizontal">
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Type">Type:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="Visit">Visit</span>
+            </dd>
+            <dt class="slds-dl--horizontal__label">
+              <span class="slds-truncate" title="Date">Date:</span>
+            </dt>
+            <dd class="slds-dl--horizontal__detail slds-tile__meta">
+              <span class="slds-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    </div>
+        
+    </apex:form>
+</html>
+</apex:page>

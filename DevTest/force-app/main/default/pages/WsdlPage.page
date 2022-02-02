@@ -1,0 +1,10 @@
+<apex:page controller="wwwWebservicexNet">
+ <apex:form > 
+ <apex:pageBlock title="Sample Integration application" >
+ <apex:outputLabel value="Enter the code  "></apex:outputLabel>
+ <apex:inputText value="{!symbol}"/>
+ <apex:commandButton value="Go!" action="{!getvalueget}" /> <br/><br/><br/>
+ <apex:outputText id="block" value="{!retVal}" > </apex:outputText>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

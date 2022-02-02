@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+  <aura:attribute name="text" type="String"/>
+  <lightning:card title="Basic DOM Example" iconName="utility:hierarchy">
+    <div class="slds-card__body slds-card__body-inner">
+      <p>
+        <lightning:formattedText value="{!v.text}"/>
+      </p>
+      <p>
+        <lightning:input aura:id="inputText" type="text" value="{!v.text}"/>
+      </p>
+    </div>
+  </lightning:card>
+    <aura:attribute name="show" type="Boolean" default="true"/>
+    <aura:if isTrue="{!v.show}">
+      <p>Peek-a-boo!</p>
+      <aura:set attribute="else">
+        <p>I’m hiding!</p>
+      </aura:set>
+    </aura:if>
+    <lightning:input aura:id="inputText" type="boolean" value="{!v.show}"/>
+</aura:component>

@@ -1,0 +1,14 @@
+<apex:page controller="repeatCon" id="thePage">
+
+    <apex:repeat value="{!strings}" var="string" id="theRepeat">
+
+        <apex:outputText value="{!string}" id="theValue"/><br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem labelTitle="test">
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:repeat>
+
+</apex:page>

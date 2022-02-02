@@ -1,0 +1,60 @@
+<apex:page standardController="Case" extensions="eXCompany_TotalNoOfCasesController" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" >
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS_2_1_4, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+    </head>
+    
+    <apex:form styleClass="slds">
+      <apex:pageMessages />
+        <!-- Without custom component for SVG -->
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-standard-opportunity">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS_2_1_4, 'assets/icons/standard-sprite/svg/symbols.svg#account')}" />
+                        </svg>
+                    </div>
+                        <div class="slds-media__body">
+                            <b><p class="slds-text-heading--label">{!sobjectAccountName}</p></b>
+                            <div class="slds-grid">
+                            <h1 class="slds-text-heading--medium slds-m-right--small" title="Test Opportunity">Number of Cases ({!iCountNoOfCases})</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <apex:outputPanel rendered="{!iCountNoOfCases>0}">
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                <thead>
+                    <tr class="slds-text-title--caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Subject">Subject</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Created Date">Created Date</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!lstCases}" var="item" >
+                        <tr>
+                            <th scope="row" data-label="Subject">
+                                <div class="slds-truncate">{!item.Subject}</div>
+                            </th>
+                            <td data-label="Created Date" >
+                                <div class="slds-truncate">{!item.createdDate}</div>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!iCountNoOfCases==0}">
+            There are no other cases associated with the Account 
+        </apex:outputPanel>
+    </apex:form>
+  </html>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Demo_Child_Object__c" extensions="NoNoneForPicklistControllerss">
+
+    Please select required status:
+    <apex:form >
+        <apex:selectList size="1" >
+            <apex:selectOptions value="{!statusOptions}"/>
+        </apex:selectList>
+    </apex:form>  
+
+</apex:page>

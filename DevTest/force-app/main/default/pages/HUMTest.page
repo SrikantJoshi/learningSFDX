@@ -1,0 +1,13 @@
+<apex:page controller="HUMDemosControllers">
+    <apex:form >
+    <apex:pageBlock title="Field values">
+      <!-- <apex:repeat value="{!memDataList1}" var="c" >
+          <b>Totalprice</b>:<apex:outputText label="Totalprice" value="{!c.totalPrice}"/><br/>
+       </apex:repeat> -->
+        <apex:pageBlockTable value="{!memDataList1}" var="item">
+           <apex:column value="{!item.totalPrice}" title="Totalprice"  /> 
+           <apex:column value="{!item.statementDate}" title="statementDate" /> 
+        </apex:pageBlockTable> 
+    </apex:pageBlock> 
+    </apex:form>
+</apex:page>

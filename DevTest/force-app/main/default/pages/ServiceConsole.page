@@ -1,0 +1,19 @@
+<apex:page >
+    <apex:includeScript value="/support/console/30.0/integration.js"/>
+    <script type="text/javascript">
+
+        var onEnclosingPrimaryTabClose = function (result) {
+            alert('The enclosing primary tab is about to be closed. Tab ID: ' + result.id + ', Object ID: ' + (result.objectId ? result.objectId : 'not available'));
+        };
+
+        //Add a listener to handle the closing of the enclosing primary tab 
+        sforce.console.getEnclosingPrimaryTabId(function (result) { 
+            if (result.id) {
+                sforce.console.addEventListener(sforce.console.ConsoleEvent.CLOSE_TAB,
+                onEnclosingPrimaryTabClose, { tabId : result.id });
+            } else {
+                alert('Could not find an enclosing primary TAB!');
+            }
+        });
+    </script>
+</apex:page>

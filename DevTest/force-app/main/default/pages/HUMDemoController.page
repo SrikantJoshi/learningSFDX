@@ -1,0 +1,11 @@
+<apex:page controller="HUMDemoController">
+   <apex:form >
+        <apex:pageBlock >
+            <!-- In our table we are displaying the Sobject records -->
+            <apex:repeat value="{!sobjs}" var="sobj" id="theRepeat">
+                <apex:outputText value="{!sobjs[0].sobj[0].Id}" title="Name" id="theValue"/><br/>
+                <apex:outputText value="{!sobjs[0].sobj[1].Name}" title="Name" id="theValue1"/><br/>
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

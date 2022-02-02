@@ -1,0 +1,15 @@
+<apex:page controller="myClass">
+   <apex:form >
+   <apex:pageBlock >  
+    <apex:pageBlockSection > 
+    <apex:pageBlockSectionItem >
+        <apex:inputtext label="Name Choose" value="{!varSetget}" title="Name Choose" />
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+        <apex:outputText value="{!makeContact}" label="Names" title="Names"></apex:outputText>
+    </apex:pageBlockSectionItem>
+   </apex:pageBlockSection>
+  </apex:pageBlock>  
+  </apex:form>
+</apex:page>

@@ -1,0 +1,55 @@
+<aura:component extensible="true">
+    <aura:attribute name="columnHeaders" type="Object" />
+    <aura:attribute name="centerColumnHeaders" type="Boolean" default="false" />
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="centerData" type="Boolean" default="false" />
+    <aura:attribute name="show" type="Boolean" default="true" />
+    <aura:attribute name="title" type="String" default="" />
+    <aura:attribute name="caption" type="String" default="" />
+
+    <aura:if isTrue="{!and(not(empty(v.columnHeaders)), not(empty(v.data)))}">
+        <div class="{!v.show == false ? 'slds-hide' : ''}">
+                <aura:if isTrue="{!v.title != ''}">
+                    <div class="slds-text-align_center">{!v.title}</div>
+                </aura:if>
+                <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+                    <aura:if isTrue="{!v.caption != ''}">
+                        <caption><div class="slds-text-heading_small slds-text-align_center">{!v.caption}</div></caption>
+                    </aura:if>
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <aura:iteration items="{!v.columnHeaders}" var="header">
+                                <th class="slds-text-title_caps" scope="col">
+                                    <div class="{!(v.centerColumnHeaders == true || header.center == true ? 'slds-text-align_center ' : '') + 'slds-truncate'}" title="{!header.label}">
+                                        {!header.label}
+                                    </div>
+                                </th>
+                            </aura:iteration> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.data}" var="row">
+                            <tr class="slds-hint-parent">
+                                <aura:iteration items="{!row}" var="column" indexVar="c">
+                                    <td data-label="{!column.label}">
+                                        <div class="{!(v.centerData || column.center ? 'slds-text-align_center ' : '') + 'slds-truncate'}">
+                                            <aura:unescapedHtml body="{!column.value}" value="{!column.value}" />
+                                        </div>
+                                    </td>
+                                </aura:iteration>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        <aura:set attribute="else">
+            <div class="slds-text-align_center">
+                <span class="slds-text-title">
+                    <lightning:icon iconName="utility:warning" variant="warning" size="medium" />
+                    &nbsp;There is no data to display.
+                </span>
+            </div>            
+        </aura:set>
+    </aura:if>
+
+</aura:component>

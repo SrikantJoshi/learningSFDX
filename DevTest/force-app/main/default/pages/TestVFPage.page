@@ -1,0 +1,30 @@
+<apex:page standardController="Case" extensions="VFpagedemo">
+  <apex:form >
+   <apex:pageBlock >
+    <apex:pageBlockButtons location="top">
+        <apex:commandButton action="{!parseJSONString}" value="Retrieve CCP/GCP Inquiry History"/>
+    </apex:pageBlockButtons>
+    <apex:commandButton action="{!doFilterInquiries}" value="Filter Results"/> <br/>
+        Reference Id :<apex:inputText value="{!strReferenceId}" label="Reference Id"/> <br/><br/>   
+    <apex:pageBlockTable value="{!lstInvs}" var="item" rendered="{!NOT(ISNULL(lstInvs))}" id="pgblk">
+        <apex:column value="{!item.ReferenceId}" headerValue="Reference Id"/> 
+        <apex:column value="{!item.CaseOrigin}" headerValue="Case Origin"/> 
+        <apex:column value="{!item.Type}" headerValue="Type"/>
+        <apex:column value="{!item.Category}" headerValue="Category"/> 
+        <apex:column value="{!item.Product}" headerValue="Product"/> 
+        
+         <apex:column value="{!item.InquiringFor}" headerValue="Reference Id"/> 
+        <apex:column value="{!item.InquiringForType}" headerValue="Case Origin"/> 
+        <apex:column value="{!item.Status}" headerValue="Type"/>
+        <apex:column value="{!item.Priority}" headerValue="Category"/> 
+        <apex:column value="{!item.DateTimeOpened}" headerValue="Product"/>
+        
+         <apex:column value="{!item.DateTimeClosed}" headerValue="Reference Id"/> 
+        <apex:column value="{!item.OwnerName}" headerValue="Case Origin"/> 
+    
+    </apex:pageBlockTable><br/><br/> 
+    <apex:commandLink action="{!First}" value="First" reRender="pgblk"/> >
+    <apex:commandLink action="{!Next}" value="Next" reRender="pgblk"/> <br/>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

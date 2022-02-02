@@ -1,0 +1,38 @@
+<apex:page >
+ 
+....  various URLFOR to access jQuery and jqGrid - I left out...
+...
+<script type="text/javascript">
+$(function(){
+jQuery("#list2").jqGrid({
+url:'
+ProjectSelectControllerExtension.getprojAssetsMap(
+function(result,event){
+if(event.status==false){alert("error")}
+},
+{escape:true}
+)',
+datatype: "json",
+colNames:['ID','Name', 'Amount1'],
+colModel:[{name:'id',index:'id', width:80, sorttype:"int"},
+{name:'name',index:'name', width:90},
+{name:'Names__c',index:'Rates__c', width:90, align:"right",sorttype:"float"}
+],
+rowNum:10,
+rowList:[10,20,30],
+pager: '#pager2',
+sortname: 'id',
+viewrecords: true,
+sortorder: "desc",
+caption:"JSON Example"
+});
+});
+$(function(){
+jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false});
+});
+</script>
+ 
+<table id="list2"></table>
+<div id="pager2"></div>
+
+</apex:page>

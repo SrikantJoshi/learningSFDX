@@ -1,0 +1,21 @@
+<apex:page showHeader="False" >
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.SLDS092, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+    <table class="slds-table">
+  <thead>
+    <tr>
+      <th scope="col">Account ID</th>
+      <th scope="col">Account name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">123</th>
+      <td>Account 1</td>
+    </tr>
+    <tr>
+      <th scope="row">456</th>
+      <td>Account 2</td>
+    </tr>
+  </tbody>
+</table>
+</apex:page>

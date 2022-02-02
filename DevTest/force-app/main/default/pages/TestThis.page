@@ -1,0 +1,16 @@
+<apex:page standardController="Document" >
+    <apex:messages />
+    <apex:form id="theForm">
+      <apex:pageBlock >
+          <apex:pageBlockSection >
+            <apex:inputFile value="{!document.body}" filename="{!document.name}"/>
+            <apex:commandButton value="Save" action="{!save}"/>
+          </apex:pageBlockSection>
+       </apex:pageBlock>
+    </apex:form>
+    
+ <div class="content">
+            <input id="photoFile" type="file" accept="image/*" style="display: none;"/>
+            <a id="photoButton" href="#">Choose Supporting Documents</a>
+          </div>
+          </apex:page>

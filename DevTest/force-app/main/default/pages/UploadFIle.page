@@ -1,0 +1,10 @@
+<apex:page controller="myControllerExtension" >
+      <section class="data-capture-buttons one-buttons">
+          <div class="content">
+               <input id="photoFile" type="file" accept="image/*" style="display: none;" value="{!ImageS}">
+                  <apex:actionSupport event="onclick" action="{!saveApplication}" />
+               </input>
+            <a id="photoButton" href="#">Choose Supporting Documents</a>
+          </div>
+      </section>
+</apex:page>
